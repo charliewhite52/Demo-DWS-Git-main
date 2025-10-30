@@ -121,7 +121,8 @@ const WorkforceScheduler = () => {
       };
   
       // Use the same endpoint for both loading data and generating schedule
-      const response = await fetch('/api/generate-demo-schedule', {
+      const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+      const response = await fetch(`${API_BASE}/api/generate-demo-schedule`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -173,7 +174,8 @@ const WorkforceScheduler = () => {
         support: config.employeeDistribution.support / 100
       };
       
-      const response = await fetch('/api/generate-demo-schedule', {
+      const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+      const response = await fetch(`${API_BASE}/api/generate-demo-schedule`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
