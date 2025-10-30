@@ -12,5 +12,12 @@ export default defineConfig({
         secure: false,
       }
     }
+  },
+  preview: {
+    allowedHosts: [
+      'demo-dws-git-main-1.onrender.com',
+      'demo-dws-git-main.onrender.com',
+      'dynamic-scheduling-frontend.onrender.com'
+    ]
   }
 })
