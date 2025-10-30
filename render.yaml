@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: dynamic-scheduling-backend
+    env: python
+    plan: free
+    buildCommand: |
+      pip install -r backend/requirements.txt
+    startCommand: |
+      cd backend && python app.py
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        value: 91f4d919ae5d429dbad969e8d8134f54
+
+  - type: web
+    name: dynamic-scheduling-frontend
+    env: node
+    plan: free
+    buildCommand: |
+      cd frontend && npm install && npm run build
+    startCommand: |
+      cd frontend && npm run preview
+    envVars:
+      - key: VITE_API_URL
+        value: https://demo-dws-git-main.onrender.com
