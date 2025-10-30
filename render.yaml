@@ -20,7 +20,7 @@ services:
     buildCommand: |
       npm install && npm run build
     startCommand: |
-      npm run preview -- --port $PORT
+      npm run preview -- --host 0.0.0.0 --port $PORT
     envVars:
       - key: VITE_API_URL
         value: https://demo-dws-git-main.onrender.com
