@@ -18,9 +18,9 @@ services:
     env: node
     plan: free
     buildCommand: |
-      cd frontend && npm install && npm run build
+      npm install && npm run build
     startCommand: |
-      cd frontend && npm run preview -- --port $PORT
+      npm run preview -- --port $PORT
     envVars:
       - key: VITE_API_URL
         value: https://demo-dws-git-main.onrender.com
